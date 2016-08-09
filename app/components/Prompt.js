@@ -12,7 +12,7 @@ function Prompt(props) {
                     <div className="form-group">
                         <input
                             className="form-control"
-                            placeholder="Githun Username"
+                            placeholder="Github Username"
                             type="text"
                             onChange={props.onUpdateUser}
                             value={props.username}/>
