@@ -4,10 +4,10 @@ var PropTypes = React.PropTypes
 function UserDetails(user) {
     return (
         <div>
-            {!!user.score && <li className='list-group-item'><h3>Score:</h3></li>}
+                {!!user.score && <li className='list-group-item'><h3>Score: {user.score}</h3></li>}
             <li className='list-group-item'><img src={user.info.avatar_url} className='img-rounded img-responsive'/></li>
             {user.info.name && <li className='list-group-item'>Name: {user.info.name}</li>}
-            <li className='list-group-item'>Username: {user.info.login}</li>
+            <li className='list-group-item'>Username: <a href={'https://github.com/' + user.info.login}>{user.info.login}</a></li>
             {user.info.location && <li className='list-group-item'>Location: {user.info.location}</li>}
             {user.info.company && <li className='list-group-item'>Company: {user.info.company}</li>}
             <li className='list-group-item'>Followers: {user.info.followers}</li>
@@ -18,7 +18,7 @@ function UserDetails(user) {
     )
 }
 
-UserDetails.propType = {
+UserDetails.propTypes = {
     score: PropTypes.number,
     info: PropTypes.shape({
         avatar_url: PropTypes.string.isRequired,
